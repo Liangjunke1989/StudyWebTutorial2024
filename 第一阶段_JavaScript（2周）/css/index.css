@@ -1,0 +1,46 @@
+/*
+css权重
+1. 内联样式
+2. id选择器
+3. class选择器
+4. 标签选择器
+*/
+    /*
+    css 继承  */
+    .box{
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        border: 1px solid black;
+        margin: 10px;
+        padding: 10px;
+    }    body{
+        font-size: 16px;
+        color: #000;
+    }
+
+
+    .separator {
+        border: none; /* 移除默认边框 */
+        border-top: 2px solid #000; /* 加粗上边框，可以设置颜色 */
+        margin: 10px 0; /* 设置上下的边距 */
+    }
+    .dashed{
+        border-top: 2px dashed #000; /* 2px虚线，颜色为黑色 */
+        border-bottom: none; /* 无底边框 */
+    }
+    #box{}
+    #box .box-item{
+    }
+    #box1{
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        border: 1px solid black;
+        margin: 10px;
+        padding: 10px;
+    }
+
+
+
+
