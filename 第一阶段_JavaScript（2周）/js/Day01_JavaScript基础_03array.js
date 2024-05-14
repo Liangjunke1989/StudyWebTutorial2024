@@ -111,8 +111,6 @@ window.onload = function () {
     }
 
 
-
-
     //4、计算
     // every()对数组的每一项都运行给定的函数，每一项都返回 ture,则返回 true
     // some()方法用于检测数组中的元素是否满足指定条件,如果有一个元素满足条件，则表达式返回true , 剩
@@ -123,7 +121,7 @@ window.onload = function () {
     // concat() 方法用于连接两个或多个数组
     // sort ()排序
     // reverse() 方法用于颠倒数组中元素的顺序
-    console.log("-------------测试回调函数-------------------------");
+    console.log("-------------01、测试回调函数-------------------------");
     {
         function fnTest(callback){
             callback()
@@ -133,18 +131,106 @@ window.onload = function () {
         })
     }
 
-    console.log("-------------测试filter-------------------------");
+    console.log("-------------02、测试当前元素  索引-------------------------");
+    {
+        var f=[19,20,22,34].filter(function(item,index){
+            return item>=20;
+        });
+        console.log(f)
+        console.log(f.length);
+    }
+
+    console.log("-------------03、测试过滤和模糊查询，filter-------------------------");
     {
         {
+            //过滤
             var arr6 = arr2.filter(function(item){
                 return item.id>1;
             })
             console.log(arr6);
-            var arr7=arr2.filter(function(str){
-                return str.includes('x1');
+
+            //模糊查询
+            var testStr="r";
+            var arr3=['red','blue','green', 'green', 'blue', 'yellow'];
+            var arr7=arr3.filter(function(str){
+                return str.includes(testStr);
             })
             console.log(arr7);
         }
+    }
+
+    console.log("-------------04、测试是否存在，some和every-------------------------");
+    {
+        var arr8=[1,2,3,4,5,6,7,8,9,10];
+        var arr9=[1,2,3,4,5];
+        console.log(arr8.some(function(item){
+            return item>3; // 有一个大于3的就返回true
+        }))
+        console.log(arr9.every(function(item){
+            return item>3; // 全部大于3才返回true
+        }))
+    }
+
+    console.log("-------------05、测试累加，reduce-------------------------");
+    {
+        var arr10=[1,2,3,4,5,6,7,8,9,10];
+        //累加
+        var sum=arr10.reduce(function(pre,cur){
+            return pre+cur;
+        })
+        console.log(sum);
+        var sum02=arr10.reduce((pre,cur)=>{
+            return pre+cur;
+        },10)//10是累加的初始值
+        console.log(sum02);
+    }
+
+    console.log("-------------06、测试合并数组，concat-------------------------");
+    {
+        //方式一：
+        var arr11=[1,2,3,4,5,6,7,8,9,10];
+        var arr12=[11,12,13,14,15,16,17,18,19,20];
+        var arr13=arr11.concat(arr12);
+        console.log(arr13);
+        //方式二：
+        var arr14=[...arr11,...arr12]
+        console.log(arr14);
+    }
+
+    console.log("-------------07、测试排序，sort,reverse-------------------------");
+    {
+        var arr15=[1,2,3,4,5,6,7,8,9,10,11];
+        var arr16=arr15.sort(function(a,b){
+            return b-a;
+        });
+        //上面这行改用lambda表达式
+        arr16.sort((a,b)=>{
+            return b-a;
+        });
+
+
+        console.log(arr16); //降序,常识印象中的降序,此时arr15=[11,10,9,8,7,6,5,4,3,2,1]
+        arr15.sort();//默认升序
+        console.log(arr16); //升序，此时arr15=[1,10,11,2,3,4,5,6,7,8,9]
+        //下面的arr16的值变了？这里需要注意！！！
+    }
+
+    console.log("-------------08、测试lambda表达式-------------------------");
+    {
+        var arr17=['green','red','blue'];
+        arr17.forEach(item=>{
+            console.log(item);
+        })
+        arr17.forEach((item,index)=>{
+            console.log(index+":"+item);
+        })//这是lambda表达式的写法
+        var arr18=arr17.sort((a,b)=>{
+            return a-b
+        });//这是lambda表达式的写法
+        console.log(arr18);
+        var arr19=arr17.sort((a,b)=>
+            a.length-b.length)//这是箭头函数的写法,按照字符长度排序
+        console.log(arr19)
     }
 }
 
