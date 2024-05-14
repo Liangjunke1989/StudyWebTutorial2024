@@ -54,42 +54,62 @@ window.onload = function () {
 
 
     console.log("--------------测试forEach-------------------------");
-    var arr = ['x','y','z'];
-    arr.forEach(function(item,index){
-        console.log(index+":"+item);
-    });
+    {
+        //let和const的区别
+        // let 和 const 的区别在于：
+        // let 声明的变量只在其声明所在的代码块内有效，而 const 声明的变量则在整个代码块内有效。
+        // 如果在代码块内部，使用 const 声明的变量，则必须先声明，再使用。
+        // 如果在代码块内部，使用 let 声明的变量，则可以先使用，再声明
+       var arr = ['x','y','z'];
+        arr.forEach(function(item,index){
+            console.log(index+":"+item);
+        });
+    }
+
     console.log("--------------测试splice和slice-------------------------");
-    arr.splice(0,2,'a','b');
-    console.log(arr);
-    var s = arr.slice(1,2);//包含/['y']
-    console.log(s);
+    {
+        arr.splice(0,2,'a','b');
+        console.log(arr);
+        var s = arr.slice(1,2);//包含/['y']
+        console.log(s);
+    }
+
 
     console.log("--------------测试map-------------------------");
-    var newArr = arr.map(function(item,index){
-        return item+1
-    })
-    console.log(newArr);
-    console.log(arr);
+    {
+        var newArr = arr.map(function(item,index){
+            return item+1
+        })
+        console.log(newArr);
+        console.log(arr);
+    }
+
 
     console.log("-------------测试map案例01-------------------------");
-    var arr2 = [{id:1,v:'x1'},{id:2,v:'x2'},{id:3,v:'x3'}];
-    //[1,2,3] 或[{id:1},{id:2},{id:3}]
-    // var arr3 =[];
-    // for(var i=0;i<arr2.length;i++){
-    //     arr3.push(arr2[i].id)
-    // };
-    // console.log(arr3)
+    {
+        var arr2 = [{id:1,v:'x1'},{id:2,v:'x2'},{id:3,v:'x3'}];
+        //[1,2,3] 或[{id:1},{id:2},{id:3}]
+        // var arr3 =[];
+        // for(var i=0;i<arr2.length;i++){
+        //     arr3.push(arr2[i].id)
+        // };
+        // console.log(arr3)
 
-    //或
-    var arr4 = arr2.map(function(item){
-        return{id:item.id,abc:item.v}
-    })
-    console.log(arr4)
+        //或
+        var arr4 = arr2.map(function(item){
+            return{id:item.id,abc:item.v}
+        })
+        console.log(arr4)
+    }
+
     console.log("-------------测试map案例02-------------------------");
-    var arr5=arr2.map(function(item){
-       return {id:item.id-1,v:"LJK_"+item.v};
-    });
-    console.log(arr5);
+    {
+        var arr5=arr2.map(function(item){
+            return {id:item.id-1,v:"LJK_"+item.v};
+        });
+        console.log(arr5);
+    }
+
 
 
 
@@ -104,12 +124,28 @@ window.onload = function () {
     // sort ()排序
     // reverse() 方法用于颠倒数组中元素的顺序
     console.log("-------------测试回调函数-------------------------");
-    function fnTest(callback){
-        callback()
+    {
+        function fnTest(callback){
+            callback()
+        }
+        fnTest(function () {
+            console.log("测试回调函数")
+        })
     }
-    fnTest(function () {
-        console.log("测试回调函数")
-    })
+
+    console.log("-------------测试filter-------------------------");
+    {
+        {
+            var arr6 = arr2.filter(function(item){
+                return item.id>1;
+            })
+            console.log(arr6);
+            var arr7=arr2.filter(function(str){
+                return str.includes('x1');
+            })
+            console.log(arr7);
+        }
+    }
 }
 
 
