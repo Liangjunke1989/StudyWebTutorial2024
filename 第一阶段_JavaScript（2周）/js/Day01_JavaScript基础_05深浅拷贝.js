@@ -314,6 +314,7 @@ window.onload = function () {
                     else {
                         o[key] = obj[key];  //真正实现深拷贝的关键是value的类型判断，value类型为基本类型，才能实现深拷贝
                     }
+
                 }
                 return o;
             }
