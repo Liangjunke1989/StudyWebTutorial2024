@@ -1,3 +1,4 @@
+
 window.onload = function () {
     console.log("-----------------------------01、深拷贝、浅拷贝基础-----------------------------")
     /*  深拷贝和浅拷贝？
@@ -314,6 +315,7 @@ window.onload = function () {
                     else {
                         o[key] = obj[key];  //真正实现深拷贝的关键是value的类型判断，value类型为基本类型，才能实现深拷贝
                     }
+
                 }
                 return o;
             }
