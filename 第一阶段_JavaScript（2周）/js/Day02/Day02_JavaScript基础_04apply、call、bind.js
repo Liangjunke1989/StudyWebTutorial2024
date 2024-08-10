@@ -45,13 +45,29 @@ window.onload = function () {
         console.log(result01);
         var result02 = fn.call(obj, 'call',a);
         console.log(result02);
+        // var bind01 = fn.bind(obj, 'bind',a);
+        // console.log(bind01());
 
         //bind
         // 用于创建一个新的函数,该函数的上下文被绑定到指定的对象，但并不会立即执行。
         // 当调用这个新函数的时候，bind的第一个参数会作为新函数的this,bind第二个参数开始，就是新函数的参数
-        var bind01 = fn.bind(obj, 'bind',a);
-        console.log(bind01());
 
+        var id=1;
+        function fn() {
+            console.log(this.id)
+        }
+        var item={
+            id:888
+        }
+        var item2={
+            id:999
+        }
+        //fn.bind(item)();//888
+        var f=fn.bind(item);//创建了一个新的函数
+        //f();//函数执行，结果为888
+        f.call(item2);//888? 改变新函数this的执行， 一旦绑定后，通过apply call是不能生效的
+        f.apply(item2);
+       
     }
 
 
