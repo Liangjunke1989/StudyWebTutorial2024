@@ -1,6 +1,6 @@
 window.onload = function () {
     /*
-        事件冒泡：从里到外触发事件
+        事件冒泡：从里到外触发事件（从上到下触发事件）
             button -> div4 -> div3 -> div2 -> body -> document
         事件捕获：从外到里触发事件
             document -> body -> div4 -> div3 -> div2 -> button
@@ -23,12 +23,16 @@ window.onload = function () {
         div4.onclick=function () {
             console.log("div4");
         }
+        var btn = document.getElementById("testBtn");
+        btn.onclick=function () {
+            console.log("testBtn");
+        }
     }
     console.log("--------------------02、事件捕获------------------------------")
     {
-        var div1 = document.getElementById("div1");
-        var div2 = document.getElementById("div2");
-        var div3 = document.getElementById("div3");
-        var div4 = document.getElementById("div4");
+        // var div1 = document.getElementById("div1");
+        // var div2 = document.getElementById("div2");
+        // var div3 = document.getElementById("div3");
+        // var div4 = document.getElementById("div4");
     }
 }
