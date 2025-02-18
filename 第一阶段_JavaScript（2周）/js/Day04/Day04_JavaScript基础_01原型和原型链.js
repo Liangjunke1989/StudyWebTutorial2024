@@ -63,6 +63,7 @@ window.onload = function () {
         console.log(person3.sex);
         person3.say();
     }
+
     console.log("--------------------03、普通对象和函数对象的区别------------------------------")
     {
         // 3、创建对象：方式三：普通对象和函数对象的区别
@@ -75,14 +76,16 @@ window.onload = function () {
             }
         };
        //查看类型
-        console.log(typeof f1);//function
-        console.log(typeof o);//object
+       //  console.log(typeof f1);//function
+       //  console.log(typeof o1);//object
+
         //1、函数有prototype属性
         f1.prototype.add = function (a, b) {
             return a + b;
         };
         f1.call(o1, 1, 2);
         o1.f2(1, 2);
+
         //2、普通对象没有prototype属性，有__proto__属性
         var o2 = new f1(3, 4);
         o2.__proto__.id = "12345";//给对象新增属性,所有对象都有__proto__属性
@@ -91,7 +94,16 @@ window.onload = function () {
         };
         console.log(`新增的ID为${o2.id}`);
         console.log("新增对象的方法为：", o2.add(1, 2));
+        console.log("------------------------------------")
+        o1.__proto__.add=function (a, b) {
+            return a + b;
+        };
+        var o3=new o1.f2(5,6);//创建对象  //类似于构造函数
+        console.log("新对象为：",o3.constructor);
+        console.log("新对象的类型为：",typeof o3);  // object
+        console.log("新对象的增加方法结果为：",o3.add(5,6));
     }
+
     console.log("--------------------04、创建对象：引申使用class------------------------------")
     {
         // 4、创建对象：方式四：class
