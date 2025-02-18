@@ -3,8 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>事件委托</title>
+    <link rel="stylesheet" href="../../css/eventCSS.css">
+
+    <script src="../../js/Day03/Day03_JavaScript基础_02event事件.js"></script>
+    <script src="../../js/Day03/Day03_JavaScript基础_03事件委托.js"></script>
 </head>
 <body>
-
+<h1>事件冒泡</h1>
+<div id="div4" class="div4">
+    div4
+    <div id="div3" class="div3">
+        div3
+        <div id="div2" class="div2">
+            div2
+            <div id="div1" class="div1">
+                div1
+                <button id="testBtn" class="testBtn">测试按钮</button>
+            </div>
+        </div>
+    </div>
+</div>
+<h1>事件委托</h1>
+<ul id="list">
+    <li>11111</li>
+    <li>22222</li>
+    <li>33333</li>
+    <li>44444</li>
+    <li>55555</li>
+</ul>
 </body>
 </html>
