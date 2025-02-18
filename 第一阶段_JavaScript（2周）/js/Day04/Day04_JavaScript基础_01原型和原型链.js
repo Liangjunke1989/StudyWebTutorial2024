@@ -113,7 +113,7 @@ window.onload = function () {
                 this.age = age;
             }
             say() {
-                console.log(`我的名字是${this.name}`, `我的年龄为${this.age}`);
+                console.log(`我的名字是${this.name}`, ` 我的年龄为${this.age}`);
             }
         }
         var p1 = new Person11('LJK111', 36 + 1);
