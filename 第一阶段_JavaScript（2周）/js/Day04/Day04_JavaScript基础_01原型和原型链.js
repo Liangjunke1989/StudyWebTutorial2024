@@ -119,5 +119,56 @@ window.onload = function () {
         var p1 = new Person11('LJK111', 36 + 1);
         p1.say();
     }
+    console.log("--------------------05、原型引申------------------------------")
+    {
+        //1、通过function构造方法创建对象
+        function Cat(name,age,color) {
+            this.name = name;
+            this.age = age;
+            this.color = color;
+        }
+        Cat.prototype.say = function () {
+            console.log(`我的名字是${this.name}`, `我的年龄为${this.age}`, `我的颜色为${this.color}`);
+        }
+        Cat.prototype.eat=function () {
+            console.log(`${this.name}在吃东西`);
+        }
+        console.log("-------------------------------")
+        var cat1 = new Cat('LJK', 1, 'white');
+        var cat2 = new Cat('kk', 2, 'yellow');
+        cat1.type="bigAnimal";
+        console.log(cat1.type)//bigAnimal
+        cat1.__proto__.type="big_Animal";
+        Cat.prototype.type="animal";
+        console.log(cat2.type);//big_Animal
+        console.log(cat1.__proto__.type);//animal
+        console.log(cat1.__proto__)
+    }
+    console.log("--------------------06、原型链------------------------------")
+    {
+        //1、创建动物构造方法
+        function Animal(name,age) {
+            this.name = name;
+            this.age = age;
+        }
+        //2、创建猫构造方法
+        // function Cat(name,age,color) {
+        //     Animal.call(this,name,age);
+        //     this.color = color;
+        // }
+        function Cat(color) {
+            this.color = color;
+        }
+
+
+        Cat.prototype=new Animal("LJK11","3611");
+        var cat = new Cat('black11');
+
+        console.log(cat.age,cat.name,cat.color)
+        console.log(cat.__proto__)
+        console.log(cat.__proto__.__proto__)
+        console.log(cat.__proto__.__proto__.__proto__)
+
+    }
 }
 
