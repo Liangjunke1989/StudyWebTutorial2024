@@ -20,5 +20,4 @@ window.onload = function () {
         var s1 = new Student("小明", 18, 100);
         s1.say();
     }
-
 }
