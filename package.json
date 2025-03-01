@@ -1,0 +1,8 @@
+{
+  "name": "LJK_TestYarnProject",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Liangjunke1989/StudyWebTutorial2024.git",
+  "author": "liangjunke <liangjunke198909@outlook.com>",
+  "license": "MIT"
+}
