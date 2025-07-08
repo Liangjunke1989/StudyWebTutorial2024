@@ -1,0 +1,25 @@
+/**
+ * 表格组件样式
+ */
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+.table th,
+.table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.table th {
+  background-color: var(--bg-color-light);
+  font-weight: 600;
+}
+
+.table tbody tr:hover {
+  background-color: var(--bg-color-light);
+} 

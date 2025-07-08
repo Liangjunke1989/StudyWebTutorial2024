@@ -1,0 +1,251 @@
+/**
+ * 全局样式
+ * 定义全局的基础样式
+ */
+
+/* HTML和body */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* 标题样式 */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-sm);
+  margin-bottom: var(--spacing-base);
+}
+
+h1 {
+  font-size: var(--font-size-xxl);
+}
+
+h2 {
+  font-size: var(--font-size-xl);
+}
+
+h3 {
+  font-size: var(--font-size-lg);
+}
+
+h4 {
+  font-size: var(--font-size-base);
+}
+
+h5 {
+  font-size: var(--font-size-sm);
+}
+
+h6 {
+  font-size: var(--font-size-xs);
+}
+
+/* 段落样式 */
+p {
+  margin-bottom: var(--spacing-base);
+  color: var(--text-secondary);
+}
+
+/* 强调文本 */
+strong, b {
+  font-weight: var(--font-weight-bold);
+}
+
+/* 代码样式 */
+code {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  background-color: var(--background-light);
+  padding: 2px 4px;
+  border-radius: var(--border-radius-sm);
+  font-size: 0.9em;
+}
+
+pre {
+  background-color: var(--background-light);
+  padding: var(--spacing-base);
+  border-radius: var(--border-radius-base);
+  overflow-x: auto;
+  margin-bottom: var(--spacing-base);
+}
+
+pre code {
+  background: none;
+  padding: 0;
+}
+
+/* 引用样式 */
+blockquote {
+  border-left: 4px solid var(--primary-color);
+  padding-left: var(--spacing-base);
+  margin: var(--spacing-base) 0;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+/* 分割线 */
+hr {
+  border: none;
+  height: 1px;
+  background-color: var(--border-light);
+  margin: var(--spacing-lg) 0;
+}
+
+/* 容器样式 */
+.container {
+  width: 100%;
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  padding: 0 var(--spacing-base);
+}
+
+.container-fluid {
+  width: 100%;
+  padding: 0 var(--spacing-base);
+}
+
+/* 栅格系统 */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 calc(var(--spacing-base) / -2);
+}
+
+.col {
+  flex: 1;
+  padding: 0 calc(var(--spacing-base) / 2);
+}
+
+/* 文本对齐 */
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+/* 文本颜色 */
+.text-primary {
+  color: var(--primary-color);
+}
+
+.text-success {
+  color: var(--success-color);
+}
+
+.text-warning {
+  color: var(--warning-color);
+}
+
+.text-error {
+  color: var(--error-color);
+}
+
+.text-muted {
+  color: var(--text-disabled);
+}
+
+/* 背景颜色 */
+.bg-primary {
+  background-color: var(--primary-color);
+}
+
+.bg-success {
+  background-color: var(--success-color);
+}
+
+.bg-warning {
+  background-color: var(--warning-color);
+}
+
+.bg-error {
+  background-color: var(--error-color);
+}
+
+.bg-light {
+  background-color: var(--background-light);
+}
+
+/* 显示/隐藏 */
+.show {
+  display: block !important;
+}
+
+.hide {
+  display: none !important;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+/* 浮动 */
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.clearfix::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/* 定位 */
+.position-relative {
+  position: relative;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.position-fixed {
+  position: fixed;
+}
+
+.position-sticky {
+  position: sticky;
+}
+
+/* 页面加载动画 */
+.page-loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* 无数据状态 */
+.no-data {
+  text-align: center;
+  padding: var(--spacing-xl);
+  color: var(--text-disabled);
+}
+
+/* 错误状态 */
+.error-state {
+  text-align: center;
+  padding: var(--spacing-xl);
+  color: var(--error-color);
+} 

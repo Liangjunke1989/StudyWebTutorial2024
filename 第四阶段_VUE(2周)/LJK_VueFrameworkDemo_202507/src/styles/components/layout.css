@@ -1,0 +1,47 @@
+/**
+ * 布局组件样式
+ */
+
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.layout-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.layout-content {
+  flex: 1;
+  margin-top: 60px;
+  margin-left: 250px;
+  padding: 16px;
+  transition: margin-left 0.3s ease;
+}
+
+.layout-content.sidebar-collapsed {
+  margin-left: 64px;
+}
+
+.layout-footer {
+  margin-left: 250px;
+  transition: margin-left 0.3s ease;
+}
+
+.layout-footer.sidebar-collapsed {
+  margin-left: 64px;
+}
+
+@media (max-width: 768px) {
+  .layout-content,
+  .layout-footer {
+    margin-left: 0;
+  }
+} 
