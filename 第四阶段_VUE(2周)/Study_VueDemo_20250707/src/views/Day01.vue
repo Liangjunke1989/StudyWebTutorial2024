@@ -65,10 +65,16 @@ const num3=computed(()=>data=>data.filter(item=>item.checked).length)
 let tags= ref([]);
 
 function addTag(tag) {
+  tag.checked=true;//改变标签样式
   //去重操作
   let r=tags.value.filter(item=>tag.id===item.id)
   if (r.length>0){
     alert('标签已存在')
+    return;
+  }
+  //限制标签数量
+  if (tags.value.length>=5){
+    alert('标签数量已达上限')
     return;
   }
   //添加
@@ -106,7 +112,7 @@ function addTag(tag) {
   <div class="context03">
     <h1>选中的标签为：{{tags}}</h1>
     <ul>
-      <li :class="{'selected':v.flag}" v-for="v in tagData" :key="v.id" @click="addTag(v)">
+      <li :class="{'checked':v.checked}" @click="addTag(v)" v-for="v in tagData" :key="v.id">
         <span>{{v.name}}</span>
 <!--        <input type="checkbox" v-model="v.checked"></input>-->
 <!--        <button @click="removeTag(v)">删除</button>-->
@@ -148,11 +154,14 @@ h1{
   margin-top: 50px;
 }
 
-.setting-selector{
-  margin-left: 50px;
-  margin-top: 50px;
-  width: 500px;
+.context03 li:hover {
+  background-color: yellow;
 }
 
+.context03 li.checked{
+  background-color: #42b983;
+  color: white;
+  border-color: #42b983;
+}
 
 </style>
